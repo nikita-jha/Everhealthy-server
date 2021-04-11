@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pylab as pl
 import numpy as np
+import tensorflow as tf
 
 # Downloading the Dataset
 !wget -O FoodRecommendation.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FoodRecommendation.csv
@@ -14,6 +15,13 @@ df = pd.read_csv("FoodRecommendation.csv")
 
 # take a look at the dataset
 df.head()
+tf.run{
+  requirements_txt="requirements.txt"
+  chief_config=tf.MachineConfig{
+    cpu_cores = 8,
+    memory = 30,
+  }
+}
 
 # Extracting variables for multivariate linear regression
 cdf = df[['CALCIUM', 'GLUCOSE', 'HDL', 'SODIUM', 'LDL', 'POTASSIUM', 'HEMOGLOBIN', 'BLOODLEVEL_ANALYSIS','BLOODLEVEL_PREDICT','BLOODLEVEL_COMB','BLOODLEVEL']]
@@ -24,6 +32,8 @@ cdf.head(9)
 msk = np.random.rand(len(df)) < 0.8
 train = cdf[msk]
 test = cdf[~msk]
+tf.loaad()
+
 
 
 # Training the Machine Learning model
