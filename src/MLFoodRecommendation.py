@@ -45,8 +45,9 @@ regr.fit (x, y)
 # The coefficients
 print ('Coefficients: ', regr.coef_)
 
-# Prediction
 def MLFoodRecommendation(user.levels):
+  
+# Prediction
 y_hat= regr.predict(test[['YEAR', 'WEIGHT','HEIGHT','BLOODLEVEL_ANALYSIS','BLOODLEVEL_PREDICT']])
 x = np.asanyarray(test[['YEAR', 'WEIGHT','HEIGHT','BLOODLEVEL_ANALYSIS','BLOODLEVEL_PREDICT']])
 y = np.asanyarray(test[['BLOODLEVEL']])
