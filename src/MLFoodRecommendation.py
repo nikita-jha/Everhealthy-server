@@ -46,13 +46,12 @@ regr.fit (x, y)
 print ('Coefficients: ', regr.coef_)
 
 # Prediction
-def MLFoodRecommendation{
+def MLFoodRecommendation(user.levels):
 y_hat= regr.predict(test[['YEAR', 'WEIGHT','HEIGHT','BLOODLEVEL_ANALYSIS','BLOODLEVEL_PREDICT']])
 x = np.asanyarray(test[['YEAR', 'WEIGHT','HEIGHT','BLOODLEVEL_ANALYSIS','BLOODLEVEL_PREDICT']])
 y = np.asanyarray(test[['BLOODLEVEL']])
 print("Residual sum of squares: %.2f"
       % np.mean((y_hat - y) ** 2))
-}
 
 # Explained variance score: 1 is perfect prediction
 print('Variance score: %.2f' % regr.score(x, y))
